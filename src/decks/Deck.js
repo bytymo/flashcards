@@ -17,8 +17,6 @@ export default function Deck({
   const deckUrl = url.url
   const deckId = url.params.deckId
 
-  console.log(cardCollection)
-
   // Displays the collection of decks saved in the database
 
   useEffect(() => {

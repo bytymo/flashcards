@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link, useHistory, useRouteMatch } from 'react-router-dom'
 import { listDecks, listCards, readDeck } from '../utils/api/index'
 
 export default function StudyDeck({
@@ -9,8 +9,14 @@ export default function StudyDeck({
   setCardCollection,
 }) {
   const [isFront, setIsFront] = useState(true)
+  const [index, setIndex] = useState(0)
+  const history = useHistory()
+
+  // Get info from the current url
   const url = useRouteMatch()
   const deckId = url.params.deckId
+
+  // render the pieces of state
   useEffect(() => {
     async function render() {
       const setDecks = await listDecks()
@@ -23,20 +29,17 @@ export default function StudyDeck({
     render()
   }, [])
 
-  let num = 0
-  let currentCard = currentDeck.cards[num]
+  let currentCard = currentDeck.cards[index]
   const front = currentCard.front
   const back = currentCard.back
-
-  let currentState = front
+  const total = currentDeck.cards.length
 
   const visible = { visibility: 'visible' }
   const invisible = { visibility: 'hidden' }
+
+  let currentState = front
   let visibility = invisible
 
-  const handleFlip = () => {
-    setIsFront((prevState) => !prevState)
-  }
   if (isFront) {
     currentState = front
     visibility = invisible
@@ -45,20 +48,31 @@ export default function StudyDeck({
     visibility = visible
   }
 
+  const handleFlip = () => {
+    setIsFront((prevState) => !prevState)
+  }
+
   const handleNext = () => {
-    console.log('before', num)
-    num = num + 1
-    setIsFront(true)
-    console.log('after', num)
+    if (index + 1 < total) {
+      currentCard = currentDeck.cards[setIndex(index + 1)]
+      setIsFront(true)
+    } else {
+      if (window.confirm('Restart cards?')) {
+        setIsFront(true)
+        return currentDeck.cards[setIndex(0)]
+      } else {
+        history.push('/')
+      }
+    }
   }
 
   function StudyOptions() {
-    if (currentDeck.cards.length >= 3) {
+    if (total >= 3) {
       return (
         <div className='card'>
           <div className='card-body'>
             <h4 className='card-title'>
-              Card {num + 1} of {currentDeck.cards.length}
+              Card {index + 1} of {total}
             </h4>
             <p className='card-text'>{currentState}</p>
             <div className='btns'>
@@ -84,8 +98,8 @@ export default function StudyDeck({
         <div>
           <h3>Not enough cards.</h3>
           <p>
-            You need at least 3 cards to study. There are{' '}
-            {currentDeck.cards.length} card(s) in this deck.
+            You need at least 3 cards to study. There are
+            {` ${total}`} card(s) in this deck.
           </p>
           <Link to={`cards/new`} className='btn btn-primary'>
             <svg
