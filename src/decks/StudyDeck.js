@@ -46,14 +46,10 @@ export default function StudyDeck({ selectedDeck, setSelectedDeck }) {
           <p>
             {'You need at least 3 cards to study. There are ' +
               validCards.length +
-              ' cards in the deck.'}{' '}
+              ' cards in the deck.'}
           </p>
           <Link to={`/decks/${selectedDeck.id}/cards/new`}>
-            <button
-              type='button'
-              className='btn btn-primary'
-              style={{ marginLeft: '5px' }}
-            >
+            <button type='button' className='btn btn-primary'>
               <i className='fas fa-plus'></i> Add Cards
             </button>
           </Link>

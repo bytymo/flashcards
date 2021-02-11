@@ -24,40 +24,39 @@ export default function Deck({ deck }) {
   return (
     <div className='card m-1'>
       <div className='card-body'>
-        <div style={{ justifyContent: 'space-between' }}>
-          <p className='text-muted' style={{ float: 'right' }}>
-            {`${noOfCards} cards`}
-          </p>
+        <div className='d-flex w-100 justify-content-between'>
           <h5 className='card-title'>{deck.name}</h5>
+          <p className='text-muted'>{`${noOfCards} cards`}</p>
         </div>
         <p className='card-text'>{deck.description}</p>
-        <Link to={`/decks/${deck.id}`}>
-          <button type='button' className='btn btn-secondary'>
+        <div className='buttons d-flex'>
+          <Link
+            to={`/decks/${deck.id}`}
+            type='button'
+            className='btn btn-secondary mr-2'
+          >
             <i className='fas fa-eye'></i> View
-          </button>
-        </Link>
-        <Link to={`/decks/${deck.id}/study`}>
-          <button
+          </Link>
+          <Link
+            to={`/decks/${deck.id}/study`}
             type='button'
             className='btn btn-primary'
-            style={{ marginLeft: '5px' }}
           >
             <i className='fas fa-book'></i> Study
+          </Link>
+          <button
+            type='button'
+            className='btn btn-danger ml-auto'
+            title='Delete'
+            onClick={() => {
+              if (window.confirm('Delete this deck?')) {
+                deleteHandler(deck.id, cardList)
+              }
+            }}
+          >
+            <i className='fas fa-trash-alt'></i>
           </button>
-        </Link>
-        <button
-          type='button'
-          className='btn btn-danger'
-          title='Delete'
-          style={{ float: 'right' }}
-          onClick={() => {
-            if (window.confirm('Delete this deck?')) {
-              deleteHandler(deck.id, cardList)
-            }
-          }}
-        >
-          <i className='fas fa-trash-alt'></i>
-        </button>
+        </div>
       </div>
     </div>
   )

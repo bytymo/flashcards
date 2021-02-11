@@ -44,40 +44,41 @@ export default function CreateDeck({ deckList, createDeckHandler }) {
       </nav>
       <h1> Create Deck</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='name'>Name</label> <br />
-        <input
-          className='form-control'
-          id='name'
-          type='text'
-          name='name'
-          placeholder='Deck Name'
-          onChange={handleChange}
-          value={formData.name}
-        />{' '}
-        <br />
-        <br />
-        <label htmlFor='description'>Description</label>
-        <br />
-        <textarea
-          className='form-control'
-          id='description'
-          type='text'
-          name='description'
-          placeholder='Brief description of the deck'
-          onChange={handleChange}
-          value={formData.description}
-        />{' '}
-        <br />
+        <div className='form-group'>
+          <label htmlFor='name'>Name</label>
+          <input
+            className='form-control'
+            id='name'
+            type='text'
+            name='name'
+            placeholder='Deck Name'
+            onChange={handleChange}
+            value={formData.name}
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='description'>Description</label>
+
+          <textarea
+            className='form-control'
+            id='description'
+            type='text'
+            name='description'
+            placeholder='Brief description of the deck'
+            onChange={handleChange}
+            value={formData.description}
+          />
+        </div>
         <div className='buttons mb-3'>
-          <button type='submit' className='btn btn-primary mr-2'>
-            Submit
-          </button>
           <button
             type='button'
-            className='btn btn-secondary'
+            className='btn btn-secondary mr-2'
             onClick={() => history.push('/')}
           >
             Cancel
+          </button>
+          <button type='submit' className='btn btn-primary'>
+            Submit
           </button>
         </div>
       </form>

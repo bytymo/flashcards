@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import { listDecks } from '../utils/api'
@@ -19,11 +19,7 @@ export default function DeckList({ deckList, setDeckList }) {
   return (
     <main className='container mb-3'>
       <Link to='decks/new'>
-        <button
-          type='button'
-          className='btn btn-secondary btn-lg'
-          style={{ margin: '5px' }}
-        >
+        <button type='button' className='btn btn-secondary btn-lg m-1'>
           <i className='fas fa-plus'></i> Create Deck
         </button>
       </Link>

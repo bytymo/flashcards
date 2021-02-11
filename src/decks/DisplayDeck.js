@@ -33,17 +33,15 @@ export default function DisplayDeck() {
     validCards &&
     validCards.map((card, index) => (
       <div className='card' key={index}>
-        <div className='card-body'>
-          <div style={{ float: 'left', width: '50%' }}>
+        <div className='card-body row'>
+          <div className='col-6'>
             <p className='text-muted'>{card.front}</p>
           </div>
-          <div style={{ float: 'right', width: '50%' }}>
-            <p className='text-muted' style={{ float: 'right' }}>
-              {card.back}
-            </p>
+          <div className='col-6'>
+            <p className='text-muted'>{card.back}</p>
           </div>
           <br />
-          <div style={{ float: 'right' }}>
+          <div className='ml-auto'>
             {/* Edit Card */}
             <Link to={`/decks/${displayDeck.id}/cards/${card.id}/edit`}>
               <button type='button' className='btn btn-secondary mr-2'>
@@ -84,38 +82,29 @@ export default function DisplayDeck() {
         <h3>{displayDeck.name}</h3>
         <p>{displayDeck.description}</p>
       </div>
-      <div>
+      <div className='d-flex'>
         {/* Edit Deck */}
         <Link to={`/decks/${displayDeck.id}/edit`}>
-          <button type='button' className='btn btn-secondary'>
+          <button type='button' className='btn btn-secondary mr-2'>
             <i className='fas fa-pencil-alt'></i> Edit
           </button>
         </Link>
         {/* Study Deck */}
         <Link to={`/decks/${displayDeck.id}/study`}>
-          <button
-            type='button'
-            className='btn btn-primary'
-            style={{ marginLeft: '5px' }}
-          >
+          <button type='button' className='btn btn-primary mr-2'>
             <i className='fas fa-book'></i> Study
           </button>
         </Link>
         {/* Add Cards */}
         <Link to={`/decks/${displayDeck.id}/cards/new`}>
-          <button
-            type='button'
-            className='btn btn-primary'
-            style={{ marginLeft: '5px' }}
-          >
+          <button type='button' className='btn btn-primary'>
             <i className='fas fa-plus'></i> Add Cards
           </button>
         </Link>
         {/* Delete Deck */}
         <button
           type='button'
-          className='btn btn-danger'
-          style={{ float: 'right' }}
+          className='btn btn-danger ml-auto'
           title='Delete'
           onClick={() => {
             if (window.confirm('Delete this deck?'))
