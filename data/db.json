@@ -9,21 +9,6 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
-    },
-    {
-      "name": "Pharmacy",
-      "description": "Medication and indication ",
-      "id": 4
-    },
-    {
-      "name": "Lorem Ipsum",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, porro! Sequi corporis perspiciatis accusamus cupiditate explicabo atque quam rerum sapiente?",
-      "id": 5
-    },
-    {
-      "name": "Lorem",
-      "description": "Ipsum",
-      "id": 6
     }
   ],
   "cards": [
@@ -63,36 +48,6 @@
       "back": "b",
       "deckId": 1,
       "id": 7
-    },
-    {
-      "front": "Tylenol",
-      "back": "Pain or fever",
-      "deckId": 4,
-      "id": 8
-    },
-    {
-      "front": "Zoloft",
-      "back": "Depression",
-      "deckId": 4,
-      "id": 9
-    },
-    {
-      "front": "Lipitor",
-      "back": "Cholesterol",
-      "deckId": 4,
-      "id": 10
-    },
-    {
-      "front": "Lorem ipsum.\n",
-      "back": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur?\n",
-      "deckId": 5,
-      "id": 11
-    },
-    {
-      "front": "Hello",
-      "back": "World",
-      "deckId": 6,
-      "id": 12
     }
   ]
 }
