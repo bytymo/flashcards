@@ -9,6 +9,21 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
+    },
+    {
+      "name": "Frontend Mock Interview",
+      "description": "Key terms and points from modules 17-26.",
+      "id": 3
+    },
+    {
+      "name": "Frontend Mock Interview, part 2",
+      "description": "A compilation of the questions Alex W brought up for the Frontend Mock Interview",
+      "id": 4
+    },
+    {
+      "name": "Newest deck",
+      "description": "New",
+      "id": 5
     }
   ],
   "cards": [
@@ -48,6 +63,180 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "What is a professional narrative? (M. 17-2)",
+      "back": "A short summary of your professional experience and career goals. Should include: who you are, what you do, why you are at Thinkful, your relevant skills, and your career goals.",
+      "deckId": 3,
+      "id": 8
+    },
+    {
+      "front": "How does one debug code on the browser? (M. 18-2)",
+      "back": "Developer Tools (DevTools)",
+      "deckId": 3,
+      "id": 9
+    },
+    {
+      "front": "How can one edit in DevTools? (M. 18-2)",
+      "back": "Double clicking the HTML element or the styles allows you to modify either.",
+      "deckId": 3,
+      "id": 10
+    },
+    {
+      "front": "What is the default setting for displaying HTML content? (M. 18-3)",
+      "back": "Display: block;",
+      "deckId": 3,
+      "id": 11
+    },
+    {
+      "front": "What is the default value for \"flex-direction\" when changing the \"flex\" property? (M. 18-3)",
+      "back": "flex-direction: row;",
+      "deckId": 3,
+      "id": 12
+    },
+    {
+      "front": "How do you change the settings so all items in a flex container are the same width? (M. 18-3)",
+      "back": "Change the item class settings to include: flex: 1;",
+      "deckId": 3,
+      "id": 13
+    },
+    {
+      "front": "What are media queries? (M. 18-3)",
+      "back": "Media queries are essentially an if statement for CSS. A condition is set, and if that condition is met, then the CSS rules within it will be applied. Typically, media queries are used for changing CSS based on screen size.",
+      "deckId": 3,
+      "id": 14
+    },
+    {
+      "front": "What is the basic syntax for a media query? (M. 18-3)",
+      "back": "@media <media type> (<media features>) {\n     <CSS Rules>\n}\n",
+      "deckId": 3,
+      "id": 15
+    },
+    {
+      "front": "What are the two approaches to media queries? Which is better practice for today's world? (M. 18-3)",
+      "back": "Graceful Degradation: Desktop-first ; Mobile-first Design: Mobile-first // Mobile-first Design is the preferred method.",
+      "deckId": 3,
+      "id": 16
+    },
+    {
+      "front": "What are some examples of flexbox parent properties? (M. 18-4)",
+      "back": "flex-direction, flex-flow, flex-wrap, justify-content, align-items, align-content",
+      "deckId": 3,
+      "id": 17
+    },
+    {
+      "front": "What are some examples of flexbox children properties? (M. 18-4)",
+      "back": "order, flex-grow, flex-shrink, flex-basis, align-self",
+      "deckId": 3,
+      "id": 18
+    },
+    {
+      "front": "What are the two attributes within each form element? Describe them. (M. 18-6)",
+      "back": "action & method // action: holds the URL to the server-side file where the data will be sent // method: specifies thte HTTP method --post or get-- that will be used with the action",
+      "deckId": 3,
+      "id": 19
+    },
+    {
+      "front": "How do you style a radio button or checkbox along with its label in CSS? (M. 18-6)",
+      "back": "form input[type=\"<HTML type>\"] + label {...}",
+      "deckId": 3,
+      "id": 20
+    },
+    {
+      "front": "What is a framework? What are some common functionalities across CSS frameworks? (M. 19-2)",
+      "back": "Reusable code that provides an opinionated solution to common problems // Organizing the layout of your page, building responsive websites, & maintaining consistency across your pages",
+      "deckId": 3,
+      "id": 21
+    },
+    {
+      "front": "How would you add a CSS framework to your project? (M. 19-2)",
+      "back": "Add a stylesheet to your index.html file using its external URL as the href value.",
+      "deckId": 3,
+      "id": 22
+    },
+    {
+      "front": "What are some common components in Bootstrap? (M. 19-4)",
+      "back": "Alerts, buttons, card, forms, jumbotron, & navs",
+      "deckId": 3,
+      "id": 23
+    },
+    {
+      "front": "What is the DOM and what does it stand for? (M. 20-2)",
+      "back": "Document Object Model; an internal representation of HTML, usually resembling a family tree, with each child only having a single parent.",
+      "deckId": 3,
+      "id": 24
+    },
+    {
+      "front": "How does one find a specific element in an HTML document and what is the basic structure? (M. 20-3)",
+      "back": "Using querySelector() or querySelectorAll() // const el = document.querySelector(\"<element>\") --- console.log(el)",
+      "deckId": 3,
+      "id": 25
+    },
+    {
+      "front": "What is the 'exact' keyword? What does it do?",
+      "back": "A property of the Route component that, when set to true, means the URL path must EXACTLY match the route path",
+      "deckId": 4,
+      "id": 26
+    },
+    {
+      "front": "What is State?",
+      "back": "It's where the component stores information that it can modify later. When called, it takes in an initial value of the state variable and returns two items: a variable and a function. The variable can only be altered by the function associated with it.",
+      "deckId": 4,
+      "id": 27
+    },
+    {
+      "front": "What are props?",
+      "back": "Key-value pairs passed into a React component. They pass on information from one component down to its child/ren component/s.",
+      "deckId": 4,
+      "id": 28
+    },
+    {
+      "front": "How is data handled in a React app?",
+      "back": "TBD",
+      "deckId": 4,
+      "id": 29
+    },
+    {
+      "front": "What are components?",
+      "back": "React Components, or functional components, are functions that allow you to split your React application into reusable pieces. They begin with a Capital letter and may only return one parent element.",
+      "deckId": 4,
+      "id": 30
+    },
+    {
+      "front": "How do you handle API requests?",
+      "back": "TBD",
+      "deckId": 4,
+      "id": 31
+    },
+    {
+      "front": "What is React Router and how does it work?",
+      "back": "A library created to help routing in React applications. which is accurately displaying information based on the browser's URL",
+      "deckId": 4,
+      "id": 32
+    },
+    {
+      "front": "What is useHistory?",
+      "back": "TBD",
+      "deckId": 4,
+      "id": 33
+    },
+    {
+      "front": "What is useEffect?",
+      "back": "A hook that performs side effects from a React function component. A side effect is anything in a React component that affects something outside the scope of the function",
+      "deckId": 4,
+      "id": 34
+    },
+    {
+      "front": "What is useParams?",
+      "back": "TBD",
+      "deckId": 4,
+      "id": 35
+    },
+    {
+      "front": "second card",
+      "back": "firsrt desc",
+      "deckId": 5,
+      "id": 36
     }
   ]
 }

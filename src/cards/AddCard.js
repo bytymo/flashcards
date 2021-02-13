@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link, useHistory } from 'react-router-dom'
 import { readDeck, createCard } from '../utils/api'
+import CardForm from './CardForm'
 
 export default function AddCard({ selectedDeck, setSelectedDeck }) {
   const { deckId } = useParams()
@@ -50,43 +51,12 @@ export default function AddCard({ selectedDeck, setSelectedDeck }) {
         </ol>
       </nav>
       <h3>{selectedDeck.name + ': Add Card'}</h3>
-      <form onSubmit={handleSubmit}>
-        <div className='form-group'>
-          <label htmlFor='name'>Front</label>
-          <textarea
-            className='form-control'
-            name='front'
-            id='front'
-            placeholder='Front side of card'
-            onChange={handleChange}
-            value={formData.front}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='description'>Back</label>
-          <textarea
-            className='form-control'
-            name='back'
-            id='back'
-            placeholder='Back side of card'
-            onChange={handleChange}
-            value={formData.back}
-            required
-          />
-        </div>
-        <div className='buttons mb-3'>
-          <Link
-            to={`/decks/${selectedDeck.id}`}
-            className='btn btn-secondary mr-2'
-          >
-            Done
-          </Link>
-          <button type='submit' className='btn btn-primary'>
-            Save
-          </button>
-        </div>
-      </form>
+      <CardForm
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        cardData={formData}
+        selectedDeck={selectedDeck}
+      />
     </div>
   )
 }
