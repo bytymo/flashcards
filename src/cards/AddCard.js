@@ -12,7 +12,7 @@ export default function AddCard({ selectedDeck, setSelectedDeck }) {
     readDeck(deckId, abortController.signal).then(setSelectedDeck)
 
     return () => abortController.abort()
-  }, [deckId])
+  }, [deckId, setSelectedDeck])
 
   const initialState = {
     front: '',

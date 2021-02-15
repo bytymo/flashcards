@@ -11,7 +11,7 @@ export default function EditDeck({ selectedDeck, setSelectedDeck }) {
     readDeck(deckId, abortController.signal).then(setSelectedDeck)
 
     return () => abortController.abort()
-  }, [deckId])
+  }, [deckId, setSelectedDeck])
 
   const handleChange = ({ target }) => {
     setSelectedDeck({

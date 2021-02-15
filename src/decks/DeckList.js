@@ -11,7 +11,7 @@ export default function DeckList({ deckList, setDeckList }) {
     listDecks(abortController.signal).then(setDeckList)
 
     return () => abortController.abort()
-  }, [])
+  }, [setDeckList])
 
   const deckCardList =
     deckList && deckList.map((deck) => <Deck key={deck.id} deck={deck} />)

@@ -16,7 +16,7 @@ export default function StudyDeck({ selectedDeck, setSelectedDeck }) {
     })
 
     return () => abortController.abort()
-  }, [deckId])
+  }, [deckId, setSelectedDeck])
 
   const validCards = cardList && cardList.filter((card) => !card.cards)
 

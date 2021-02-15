@@ -4,11 +4,11 @@ import Home from '../Decks/DeckList'
 import StudyDeck from '../Decks/StudyDeck'
 import NotFound from './NotFound'
 import Header from './Header'
-import DeckEdit from '../Decks/EditDeck'
-import DeckView from '../Decks/DisplayDeck'
-import CardEdit from '../Cards/EditCard'
-import CardCreate from '../Cards/AddCard'
-import DeckCreate from '../Decks/CreateDeck'
+import EditDeck from '../Decks/EditDeck'
+import DisplayDeck from '../Decks/DisplayDeck'
+import EditCard from '../Cards/EditCard'
+import AddCard from '../Cards/AddCard'
+import CreateDeck from '../Decks/CreateDeck'
 
 function Layout() {
   const [deckList, setDeckList] = useState([])
@@ -24,7 +24,7 @@ function Layout() {
       <div className='container'>
         <Switch>
           <Route path='/decks/new'>
-            <DeckCreate
+            <CreateDeck
               deckList={deckList}
               createDeckHandler={createDeckHandler}
             />
@@ -36,25 +36,25 @@ function Layout() {
             />
           </Route>
           <Route path='/decks/:deckId/edit'>
-            <DeckEdit
+            <EditDeck
               selectedDeck={selectedDeck}
               setSelectedDeck={setSelectedDeck}
             />
           </Route>
           <Route path='/decks/:deckId/cards/new'>
-            <CardCreate
+            <AddCard
               selectedDeck={selectedDeck}
               setSelectedDeck={setSelectedDeck}
             />
           </Route>
           <Route path='/decks/:deckId/cards/:cardId/edit'>
-            <CardEdit
+            <EditCard
               selectedDeck={selectedDeck}
               setSelectedDeck={setSelectedDeck}
             />
           </Route>
           <Route exact={true} path='/decks/:deckId'>
-            <DeckView />
+            <DisplayDeck />
           </Route>
           <Route exact={true} path='/decks'>
             <Redirect to='/' />

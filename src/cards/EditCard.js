@@ -13,7 +13,7 @@ export default function EditCard({ selectedDeck, setSelectedDeck }) {
       setSelectedDeck(deck)
       readCard(cardId, abortController.signal).then(setSelectedCard)
     })
-  }, [deckId, cardId])
+  }, [deckId, cardId, setSelectedDeck])
 
   const handleChange = ({ target }) => {
     setSelectedCard({
