@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
-import Home from '../Decks/DeckList'
-import StudyDeck from '../Decks/StudyDeck'
+import Home from '../decks/DeckList'
+import StudyDeck from '../decks/StudyDeck'
 import NotFound from './NotFound'
 import Header from './Header'
-import EditDeck from '../Decks/EditDeck'
-import DisplayDeck from '../Decks/DisplayDeck'
-import EditCard from '../Cards/EditCard'
-import AddCard from '../Cards/AddCard'
-import CreateDeck from '../Decks/CreateDeck'
+import EditDeck from '../decks/EditDeck'
+import DisplayDeck from '../decks/DisplayDeck'
+import EditCard from '../cards/EditCard'
+import AddCard from '../cards/AddCard'
+import CreateDeck from '../decks/CreateDeck'
 
 function Layout() {
   const [deckList, setDeckList] = useState([])
